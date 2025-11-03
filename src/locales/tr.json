@@ -1,0 +1,182 @@
+{
+  "navbar": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "services": "Hizmetler",
+    "work": "Çalışmalar",
+    "blog": "Blog",
+    "contact": "İletişim",
+    "cta": "Başlayalım"
+  },
+  "hero": {
+    "slides": {
+      "0": {
+        "title": "Ham Etki\nYaratıyoruz.",
+        "description": "Yaratıcı yönetim, tasarım, sosyal strateji, AI inovasyonu ve dijital reklamcılık — hepsi bir arada ham deneyim.",
+        "button": "Birlikte Çalışalım"
+      },
+      "1": {
+        "title": "Ham Yaratıcı\nGüç.",
+        "description": "Sınırları zorlayan markalama. Büyüleyen film yönetimi. Hikayenizi anlatan fotoğrafçılık.",
+        "button": "Yaratıcılığı Keşfet"
+      },
+      "2": {
+        "title": "Sosyal Medya\nMükemmelliği.",
+        "description": "Topluluk oluşturma, dönüştüren içerik, önemli influencer ortaklıkları. Markanız, güçlendirildi.",
+        "button": "Sosyalinizi Güçlendirin"
+      },
+      "3": {
+        "title": "AI Destekli\nİnovasyon.",
+        "description": "Markanızı AI zekası ile geleceğe taşıyın. Otomatik iş akışları, yaratıcı sistemler, veri odaklı sonuçlar.",
+        "button": "AI Çözümlerini Keşfedin"
+      }
+    }
+  },
+  "about": {
+    "title": "Filtresiz Yaratıcılık.",
+    "description": "Raw Ajans, tasarımın içgüdüyle buluştuğu yer. Hedef kitlenizle rezonansa giren ve gerçek sonuçlar üreten anlamlı marka deneyimleri yaratmak için sanatı, veriyi ve teknolojiyi harmanlıyoruz.",
+    "features": {
+      "strategy": {
+        "title": "Strateji",
+        "description": "Veri odaklı içgörüler yaratıcı düşünceyle buluşuyor"
+      },
+      "design": {
+        "title": "Tasarım",
+        "description": "Büyüleyen görsel hikaye anlatımı"
+      },
+      "technology": {
+        "title": "Teknoloji",
+        "description": "Modern markalar için son teknoloji çözümler"
+      }
+    }
+  },
+  "services": {
+    "title": "Uzmanlığımız",
+    "subtitle": "Markanızı yükseltmek için üretilmiş dört mükemmellik sütunu",
+    "learnMore": "Daha Fazla",
+    "items": {
+      "creative": {
+        "title": "Raw Creative",
+        "description": "Markalama, film yönetimi, fotoğrafçılık ve hikaye anlatımı.",
+        "details": {
+          "0": "Marka Kimliği & Strateji",
+          "1": "Film & Video Prodüksiyonu",
+          "2": "Fotoğrafçılık & Sanat Yönetimi",
+          "3": "Görsel Hikaye Anlatımı"
+        }
+      },
+      "social": {
+        "title": "Raw Social",
+        "description": "Sosyal medya yönetimi, içerik oluşturma, influencer pazarlama.",
+        "details": {
+          "0": "Sosyal Medya Stratejisi",
+          "1": "İçerik Üretimi & Yönetimi",
+          "2": "Influencer Ortaklıkları",
+          "3": "Topluluk Etkileşimi"
+        }
+      },
+      "ai": {
+        "title": "Raw AI",
+        "description": "AI destekli markalama, otomatik iş akışları, yaratıcı zeka sistemleri.",
+        "details": {
+          "0": "AI Destekli Markalama",
+          "1": "Otomatik İş Akışları",
+          "2": "Yaratıcı Zeka",
+          "3": "Veri Odaklı İçgörüler"
+        }
+      },
+      "ads": {
+        "title": "Raw Ads",
+        "description": "Performans pazarlama, kampanya stratejisi, medya satın alma, analitik.",
+        "details": {
+          "0": "Performans Pazarlama",
+          "1": "Kampanya Stratejisi",
+          "2": "Medya Satın Alma & Planlama",
+          "3": "Analitik & Optimizasyon"
+        }
+      }
+    }
+  },
+  "showcase": {
+    "title": "Öne Çıkan Çalışmalar",
+    "subtitle": "Ham yaratıcılığın gücünü keşfedin",
+    "viewProject": "Projeyi Görüntüle",
+    "cta": "Daha fazlasını görmek ister misiniz? Hadi konuşalım.",
+    "viewPortfolio": "Tüm Portfolyoyu Görüntüle",
+    "projects": {
+      "0": {
+        "title": "Marka Evrimi",
+        "category": "Markalama & Kimlik"
+      },
+      "1": {
+        "title": "Sosyal Kampanya",
+        "category": "Sosyal Medya"
+      },
+      "2": {
+        "title": "AI Entegrasyonu",
+        "category": "Teknoloji"
+      },
+      "3": {
+        "title": "Ürün Lansmanı",
+        "category": "Reklamcılık"
+      },
+      "4": {
+        "title": "Dijital Deneyim",
+        "category": "Web Tasarım"
+      },
+      "5": {
+        "title": "Görsel Hikaye",
+        "category": "Fotoğrafçılık"
+      }
+    }
+  },
+  "blog": {
+    "title": "Son İçgörüler",
+    "subtitle": "Yaratıcı pazarlamanın dünyasından en son trendler, ipuçları ve hikayelerle güncel kalın",
+    "categories": {
+      "all": "Tümü",
+      "creative": "Yaratıcı",
+      "social": "Sosyal Medya",
+      "ai": "AI & Teknoloji",
+      "marketing": "Pazarlama"
+    },
+    "readMore": "Devamını Oku",
+    "readTime": "dk okuma",
+    "viewAll": "Tüm Makaleleri Görüntüle"
+  },
+  "contact": {
+    "title": "Bir Şeyler Yaratmaya Başlayalım.",
+    "description": "Markanızı bir sonraki seviyeye taşımaya hazır mısınız? Hadi konuşalım.",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "location": "Konum",
+    "locationText": "İstanbul, Türkiye",
+    "followUs": "Bizi Takip Edin",
+    "startProject": "Projenizi Başlatın",
+    "tagline": "İçgüdüyle tasarlandı. Tutkuyla inşa edildi.",
+    "copyright": "© 2024 Raw Ajans. Tüm hakları saklıdır."
+  },
+  "chatbot": {
+    "status": "Çevrimiçi",
+    "empty": "Merhaba! Size nasıl yardımcı olabilirim?",
+    "placeholder": "Mesajınızı yazın...",
+    "quickReplies": "Hızlı Cevaplar",
+    "welcome": "Merhaba! 👋 Raw Ajans AI Asistanı'na hoş geldiniz. Size nasıl yardımcı olabilirim?",
+    "quick": {
+      "services": "Hizmetleriniz neler?",
+      "pricing": "Fiyatlar ne kadar?",
+      "contact": "İletişim bilgileri",
+      "portfolio": "Çalışmalarınızı görebilir miyim?"
+    },
+    "responses": {
+      "greeting": "Merhaba! Size yardımcı olmaktan mutluluk duyarım. Raw Ajans olarak yaratıcı tasarım, sosyal medya yönetimi, AI çözümleri ve dijital reklamcılık konularında hizmet veriyoruz. Size nasıl yardımcı olabilirim?",
+      "services": "Raw Ajans olarak 4 ana hizmet sunuyoruz:\n\n🎨 Raw Creative - Markalama, film yönetimi, fotoğrafçılık\n📱 Raw Social - Sosyal medya yönetimi ve içerik üretimi\n🤖 Raw AI - AI destekli markalama ve otomasyon\n📊 Raw Ads - Performans pazarlama ve kampanya yönetimi\n\nHangi hizmet hakkında daha fazla bilgi almak istersiniz?",
+      "pricing": "Fiyatlandırmamız projenin kapsamına ve ihtiyaçlarınıza göre değişkenlik gösteriyor. Size özel bir teklif hazırlamak için lütfen iletişim formumuzu doldurun veya hello@rawajans.com adresinden bize ulaşın. İlk danışmanlık görüşmesi ücretsizdir! 💼",
+      "contact": "Bize şu yollardan ulaşabilirsiniz:\n\n📧 Email: hello@rawajans.com\n📞 Telefon: +90 (212) 555 0123\n📍 Adres: İstanbul, Türkiye\n\nSosyal medyadan da takip edebilirsiniz! 🚀",
+      "portfolio": "Çalışmalarımızı sayfamızın 'Öne Çıkan Çalışmalar' bölümünden inceleyebilirsiniz. Marka evrimi, sosyal kampanyalar, AI entegrasyonları ve daha fazlası! Detaylı portfolio için bize hello@rawajans.com üzerinden ulaşabilirsiniz. 💼",
+      "thanks": "Rica ederim! Başka bir konuda yardımcı olabileceğim bir şey var mı? 😊",
+      "default": "İlginiz için teşekkürler! Bu konuda size nasıl yardımcı olabileceğimi tam olarak anlayamadım. Lütfen sorunuzu başka türlü ifade eder misiniz? Ya da direkt hello@rawajans.com adresinden bizimle iletişime geçebilirsiniz. 📧"
+    }
+  }
+}
+

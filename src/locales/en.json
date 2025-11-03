@@ -1,0 +1,182 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "work": "Work",
+    "blog": "Blog",
+    "contact": "Contact",
+    "cta": "Get Started"
+  },
+  "hero": {
+    "slides": {
+      "0": {
+        "title": "We Create\nRaw Impact.",
+        "description": "Creative direction, design, social strategy, AI innovation & digital advertising — all in one raw experience.",
+        "button": "Let's Collaborate"
+      },
+      "1": {
+        "title": "Raw Creative\nPower.",
+        "description": "Branding that breaks boundaries. Film direction that captivates. Photography that tells your story.",
+        "button": "Explore Creative"
+      },
+      "2": {
+        "title": "Social Media\nExcellence.",
+        "description": "Community building, content that converts, influencer partnerships that matter. Your brand, amplified.",
+        "button": "Boost Your Social"
+      },
+      "3": {
+        "title": "AI-Powered\nInnovation.",
+        "description": "Future-proof your brand with AI intelligence. Automated workflows, creative systems, data-driven results.",
+        "button": "Discover AI Solutions"
+      }
+    }
+  },
+  "about": {
+    "title": "Unfiltered Creativity.",
+    "description": "Raw Ajans is where design meets instinct. We blend art, data, and technology to craft meaningful brand experiences that resonate with your audience and drive real results.",
+    "features": {
+      "strategy": {
+        "title": "Strategy",
+        "description": "Data-driven insights meet creative thinking"
+      },
+      "design": {
+        "title": "Design",
+        "description": "Visual storytelling that captivates"
+      },
+      "technology": {
+        "title": "Technology",
+        "description": "Cutting-edge solutions for modern brands"
+      }
+    }
+  },
+  "services": {
+    "title": "Our Expertise",
+    "subtitle": "Four pillars of excellence, crafted to elevate your brand",
+    "learnMore": "Learn More",
+    "items": {
+      "creative": {
+        "title": "Raw Creative",
+        "description": "Branding, film direction, photography, and storytelling.",
+        "details": {
+          "0": "Brand Identity & Strategy",
+          "1": "Film & Video Production",
+          "2": "Photography & Art Direction",
+          "3": "Visual Storytelling"
+        }
+      },
+      "social": {
+        "title": "Raw Social",
+        "description": "Social media management, content creation, influencer marketing.",
+        "details": {
+          "0": "Social Media Strategy",
+          "1": "Content Creation & Management",
+          "2": "Influencer Partnerships",
+          "3": "Community Engagement"
+        }
+      },
+      "ai": {
+        "title": "Raw AI",
+        "description": "AI-powered branding, automated workflows, creative intelligence systems.",
+        "details": {
+          "0": "AI-Powered Branding",
+          "1": "Automated Workflows",
+          "2": "Creative Intelligence",
+          "3": "Data-Driven Insights"
+        }
+      },
+      "ads": {
+        "title": "Raw Ads",
+        "description": "Performance marketing, campaign strategy, media buying, analytics.",
+        "details": {
+          "0": "Performance Marketing",
+          "1": "Campaign Strategy",
+          "2": "Media Buying & Planning",
+          "3": "Analytics & Optimization"
+        }
+      }
+    }
+  },
+  "showcase": {
+    "title": "Featured Work",
+    "subtitle": "Discover the power of raw creativity",
+    "viewProject": "View Project",
+    "cta": "Want to see more? Let's start a conversation.",
+    "viewPortfolio": "View Full Portfolio",
+    "projects": {
+      "0": {
+        "title": "Brand Evolution",
+        "category": "Branding & Identity"
+      },
+      "1": {
+        "title": "Social Campaign",
+        "category": "Social Media"
+      },
+      "2": {
+        "title": "AI Integration",
+        "category": "Technology"
+      },
+      "3": {
+        "title": "Product Launch",
+        "category": "Advertising"
+      },
+      "4": {
+        "title": "Digital Experience",
+        "category": "Web Design"
+      },
+      "5": {
+        "title": "Visual Story",
+        "category": "Photography"
+      }
+    }
+  },
+  "blog": {
+    "title": "Latest Insights",
+    "subtitle": "Stay updated with the latest trends, tips, and stories from the world of creative marketing",
+    "categories": {
+      "all": "All",
+      "creative": "Creative",
+      "social": "Social Media",
+      "ai": "AI & Tech",
+      "marketing": "Marketing"
+    },
+    "readMore": "Read More",
+    "readTime": "min read",
+    "viewAll": "View All Articles"
+  },
+  "contact": {
+    "title": "Let's Create Something Raw.",
+    "description": "Ready to elevate your brand to the next level? Let's talk.",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "locationText": "Istanbul, Turkey",
+    "followUs": "Follow Us",
+    "startProject": "Start Your Project",
+    "tagline": "Designed with instinct. Built with passion.",
+    "copyright": "© 2024 Raw Ajans. All rights reserved."
+  },
+  "chatbot": {
+    "status": "Online",
+    "empty": "Hello! How can I help you?",
+    "placeholder": "Type your message...",
+    "quickReplies": "Quick Replies",
+    "welcome": "Hello! 👋 Welcome to Raw Ajans AI Assistant. How can I help you today?",
+    "quick": {
+      "services": "What are your services?",
+      "pricing": "What are your prices?",
+      "contact": "Contact information",
+      "portfolio": "Can I see your work?"
+    },
+    "responses": {
+      "greeting": "Hello! I'm happy to help. At Raw Ajans, we provide creative design, social media management, AI solutions, and digital advertising services. How can I assist you?",
+      "services": "Raw Ajans offers 4 main services:\n\n🎨 Raw Creative - Branding, film direction, photography\n📱 Raw Social - Social media management & content creation\n🤖 Raw AI - AI-powered branding & automation\n📊 Raw Ads - Performance marketing & campaign management\n\nWhich service would you like to know more about?",
+      "pricing": "Our pricing varies based on project scope and your needs. To prepare a custom proposal, please fill out our contact form or reach us at hello@rawajans.com. First consultation is free! 💼",
+      "contact": "You can reach us through:\n\n📧 Email: hello@rawajans.com\n📞 Phone: +90 (212) 555 0123\n📍 Address: Istanbul, Turkey\n\nFollow us on social media too! 🚀",
+      "portfolio": "You can check out our work in the 'Featured Work' section on our page. Brand evolution, social campaigns, AI integrations and more! For detailed portfolio, contact us at hello@rawajans.com. 💼",
+      "thanks": "You're welcome! Is there anything else I can help you with? 😊",
+      "default": "Thank you for your interest! I didn't quite understand how I can help with that. Could you please rephrase your question? Or you can directly contact us at hello@rawajans.com. 📧"
+    }
+  }
+}
+
