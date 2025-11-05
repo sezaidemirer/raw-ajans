@@ -57,16 +57,16 @@ const Hero = () => {
     }
   };
 
-  // Auto-advance slides
-  useEffect(() => {
-    if (isPaused) return;
-    
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000); // Change slide every 5 seconds
+      // Auto-advance slides
+      useEffect(() => {
+        if (isPaused) return;
+        
+        const timer = setInterval(() => {
+          setCurrentSlide((prev) => (prev + 1) % slides.length);
+        }, 3000); // Change slide every 3 seconds
 
-    return () => clearInterval(timer);
-  }, [isPaused, slides.length]);
+        return () => clearInterval(timer);
+      }, [isPaused, slides.length]);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -151,10 +151,10 @@ const Hero = () => {
         </AnimatePresence>
       </div>
 
-      {/* Navigation Arrows - Desktop only (center) */}
+      {/* Navigation Arrows - Hidden on mobile */}
       <button
         onClick={prevSlide}
-        className="hidden md:block absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all duration-300 group"
+        className="hidden md:flex absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all duration-300 group items-center justify-center"
         aria-label="Previous slide"
       >
         <ChevronLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform duration-300" />
@@ -162,14 +162,14 @@ const Hero = () => {
 
       <button
         onClick={nextSlide}
-        className="hidden md:block absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all duration-300 group"
+        className="hidden md:flex absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all duration-300 group items-center justify-center"
         aria-label="Next slide"
       >
         <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
       </button>
 
       {/* Hero Content */}
-      <div className="relative z-10 text-center px-4 md:px-4 max-w-6xl mx-auto pt-16 md:pt-0 pb-24 md:pb-0">
+      <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
@@ -177,10 +177,9 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -30 }}
             transition={{ duration: 0.5 }}
-            className="space-y-4 md:space-y-6"
           >
             <motion.h1 
-              className="font-montserrat font-bold text-2xl sm:text-3xl md:text-6xl lg:text-8xl xl:text-9xl gradient-text whitespace-pre-line px-2 leading-tight md:leading-normal"
+              className="font-montserrat font-bold text-6xl md:text-8xl lg:text-9xl mb-6 gradient-text whitespace-pre-line"
               animate={{
                 backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
               }}
@@ -194,7 +193,7 @@ const Hero = () => {
             </motion.h1>
 
             <motion.p
-              className="font-inter text-xs sm:text-sm md:text-lg lg:text-xl xl:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4 md:px-2"
+              className="font-inter text-lg md:text-xl lg:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -206,14 +205,13 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="pt-2 md:pt-0"
             >
               <button
                 onClick={handleScrollToContact}
-                className={`group relative inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r ${currentSlideData.gradientFrom} ${currentSlideData.gradientVia} ${currentSlideData.gradientTo} text-white font-poppins font-semibold text-sm md:text-lg rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl`}
+                className={`group relative inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r ${currentSlideData.gradientFrom} ${currentSlideData.gradientVia} ${currentSlideData.gradientTo} text-white font-poppins font-semibold text-lg rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl`}
               >
                 <span className="relative z-10">{currentSlideData.buttonText}</span>
-                <ArrowRight className="relative z-10 w-4 h-4 md:w-5 md:h-5 transition-transform duration-300 group-hover:translate-x-2" />
+                <ArrowRight className="relative z-10 w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" />
                 
                 {/* Animated background */}
                 <motion.div
@@ -227,41 +225,20 @@ const Hero = () => {
           </motion.div>
         </AnimatePresence>
 
-        {/* Slide Indicators with Navigation Arrows (Mobile) */}
-        <div className="absolute bottom-16 md:bottom-20 left-1/2 transform -translate-x-1/2 flex items-center gap-3 md:gap-3 z-20">
-          {/* Left Arrow - Mobile only */}
-          <button
-            onClick={prevSlide}
-            className="md:hidden p-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all duration-300 group"
-            aria-label="Previous slide"
-          >
-            <ChevronLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300" />
-          </button>
-
-          {/* Dots */}
-          <div className="flex gap-2 md:gap-3">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`transition-all duration-300 rounded-full ${
-                  index === currentSlide
-                    ? `w-8 h-2 md:w-12 md:h-3 bg-gradient-to-r ${currentSlideData.gradientFrom} ${currentSlideData.gradientTo}`
-                    : 'w-2 h-2 md:w-3 md:h-3 bg-white/30 hover:bg-white/50'
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
-
-          {/* Right Arrow - Mobile only */}
-          <button
-            onClick={nextSlide}
-            className="md:hidden p-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all duration-300 group"
-            aria-label="Next slide"
-          >
-            <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-          </button>
+        {/* Slide Indicators */}
+        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex gap-3 z-20">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`transition-all duration-300 rounded-full ${
+                index === currentSlide
+                  ? `w-12 h-3 bg-gradient-to-r ${currentSlideData.gradientFrom} ${currentSlideData.gradientTo}`
+                  : 'w-3 h-3 bg-white/30 hover:bg-white/50'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
 
       </div>
@@ -274,7 +251,7 @@ const Hero = () => {
           initial={{ width: "0%" }}
           animate={{ width: isPaused ? `${(currentSlide / slides.length) * 100}%` : "100%" }}
           transition={{
-            duration: isPaused ? 0 : 5,
+            duration: isPaused ? 0 : 3,
             ease: "linear"
           }}
         />
