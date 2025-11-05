@@ -169,7 +169,7 @@ const Hero = () => {
       </button>
 
       {/* Hero Content */}
-      <div className="relative z-10 text-center px-4 max-w-6xl mx-auto -mt-[10px] md:mt-0">
+      <div className="relative z-10 text-center px-4 md:px-4 max-w-6xl mx-auto pt-16 md:pt-0 pb-24 md:pb-0">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
@@ -177,9 +177,10 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -30 }}
             transition={{ duration: 0.5 }}
+            className="space-y-4 md:space-y-6"
           >
             <motion.h1 
-              className="font-montserrat font-bold text-3xl sm:text-4xl md:text-6xl lg:text-8xl xl:text-9xl mb-4 md:mb-6 gradient-text whitespace-pre-line px-2"
+              className="font-montserrat font-bold text-2xl sm:text-3xl md:text-6xl lg:text-8xl xl:text-9xl gradient-text whitespace-pre-line px-2 leading-tight md:leading-normal"
               animate={{
                 backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
               }}
@@ -193,7 +194,7 @@ const Hero = () => {
             </motion.h1>
 
             <motion.p
-              className="font-inter text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-300 mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed px-2"
+              className="font-inter text-xs sm:text-sm md:text-lg lg:text-xl xl:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4 md:px-2"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -205,13 +206,14 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
+              className="pt-2 md:pt-0"
             >
               <button
                 onClick={handleScrollToContact}
-                className={`group relative inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r ${currentSlideData.gradientFrom} ${currentSlideData.gradientVia} ${currentSlideData.gradientTo} text-white font-poppins font-semibold text-lg rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl`}
+                className={`group relative inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r ${currentSlideData.gradientFrom} ${currentSlideData.gradientVia} ${currentSlideData.gradientTo} text-white font-poppins font-semibold text-sm md:text-lg rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl`}
               >
                 <span className="relative z-10">{currentSlideData.buttonText}</span>
-                <ArrowRight className="relative z-10 w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" />
+                <ArrowRight className="relative z-10 w-4 h-4 md:w-5 md:h-5 transition-transform duration-300 group-hover:translate-x-2" />
                 
                 {/* Animated background */}
                 <motion.div
@@ -226,26 +228,26 @@ const Hero = () => {
         </AnimatePresence>
 
         {/* Slide Indicators with Navigation Arrows (Mobile) */}
-        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex items-center gap-4 md:gap-3 z-20">
+        <div className="absolute bottom-16 md:bottom-20 left-1/2 transform -translate-x-1/2 flex items-center gap-3 md:gap-3 z-20">
           {/* Left Arrow - Mobile only */}
           <button
             onClick={prevSlide}
             className="md:hidden p-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all duration-300 group"
             aria-label="Previous slide"
           >
-            <ChevronLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300" />
+            <ChevronLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300" />
           </button>
 
           {/* Dots */}
-          <div className="flex gap-3">
+          <div className="flex gap-2 md:gap-3">
             {slides.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
                 className={`transition-all duration-300 rounded-full ${
                   index === currentSlide
-                    ? `w-12 h-3 bg-gradient-to-r ${currentSlideData.gradientFrom} ${currentSlideData.gradientTo}`
-                    : 'w-3 h-3 bg-white/30 hover:bg-white/50'
+                    ? `w-8 h-2 md:w-12 md:h-3 bg-gradient-to-r ${currentSlideData.gradientFrom} ${currentSlideData.gradientTo}`
+                    : 'w-2 h-2 md:w-3 md:h-3 bg-white/30 hover:bg-white/50'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -258,7 +260,7 @@ const Hero = () => {
             className="md:hidden p-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all duration-300 group"
             aria-label="Next slide"
           >
-            <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+            <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
           </button>
         </div>
 
