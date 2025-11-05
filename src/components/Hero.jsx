@@ -169,7 +169,7 @@ const Hero = () => {
       </button>
 
       {/* Hero Content */}
-      <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
+      <div className="relative z-10 text-center px-4 max-w-6xl mx-auto -mt-[10px] md:mt-0">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
@@ -179,7 +179,7 @@ const Hero = () => {
             transition={{ duration: 0.5 }}
           >
             <motion.h1 
-              className="font-montserrat font-bold text-6xl md:text-8xl lg:text-9xl mb-6 gradient-text whitespace-pre-line"
+              className="font-montserrat font-bold text-3xl sm:text-4xl md:text-6xl lg:text-8xl xl:text-9xl mb-4 md:mb-6 gradient-text whitespace-pre-line px-2"
               animate={{
                 backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
               }}
@@ -193,7 +193,7 @@ const Hero = () => {
             </motion.h1>
 
             <motion.p
-              className="font-inter text-lg md:text-xl lg:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
+              className="font-inter text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-300 mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed px-2"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
