@@ -151,10 +151,10 @@ const Hero = () => {
         </AnimatePresence>
       </div>
 
-      {/* Navigation Arrows */}
+      {/* Navigation Arrows - Desktop only (center) */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all duration-300 group"
+        className="hidden md:block absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all duration-300 group"
         aria-label="Previous slide"
       >
         <ChevronLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform duration-300" />
@@ -162,7 +162,7 @@ const Hero = () => {
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all duration-300 group"
+        className="hidden md:block absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all duration-300 group"
         aria-label="Next slide"
       >
         <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
@@ -225,20 +225,41 @@ const Hero = () => {
           </motion.div>
         </AnimatePresence>
 
-        {/* Slide Indicators */}
-        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex gap-3 z-20">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`transition-all duration-300 rounded-full ${
-                index === currentSlide
-                  ? `w-12 h-3 bg-gradient-to-r ${currentSlideData.gradientFrom} ${currentSlideData.gradientTo}`
-                  : 'w-3 h-3 bg-white/30 hover:bg-white/50'
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
+        {/* Slide Indicators with Navigation Arrows (Mobile) */}
+        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex items-center gap-4 md:gap-3 z-20">
+          {/* Left Arrow - Mobile only */}
+          <button
+            onClick={prevSlide}
+            className="md:hidden p-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all duration-300 group"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300" />
+          </button>
+
+          {/* Dots */}
+          <div className="flex gap-3">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`transition-all duration-300 rounded-full ${
+                  index === currentSlide
+                    ? `w-12 h-3 bg-gradient-to-r ${currentSlideData.gradientFrom} ${currentSlideData.gradientTo}`
+                    : 'w-3 h-3 bg-white/30 hover:bg-white/50'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          {/* Right Arrow - Mobile only */}
+          <button
+            onClick={nextSlide}
+            className="md:hidden p-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all duration-300 group"
+            aria-label="Next slide"
+          >
+            <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+          </button>
         </div>
 
       </div>
