@@ -180,18 +180,27 @@ const Hero = () => {
             className="w-full"
           >
             <motion.h1 
-              className="font-montserrat font-bold text-5xl sm:text-6xl md:text-8xl lg:text-9xl mb-6 gradient-text whitespace-pre-line break-words px-2 md:px-0"
-              animate={{
+              className={`font-montserrat font-bold text-5xl sm:text-6xl md:text-8xl lg:text-9xl mb-6 whitespace-pre-line break-words px-2 md:px-0 ${
+                currentSlide === 2 
+                  ? '' 
+                  : 'gradient-text'
+              }`}
+              animate={currentSlide === 2 ? {} : {
                 backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
               }}
-              transition={{
+              transition={currentSlide === 2 ? {} : {
                 duration: 5,
                 repeat: Infinity,
                 ease: "linear"
               }}
               style={{
                 wordBreak: "break-word",
-                hyphens: "auto"
+                hyphens: "auto",
+                ...(currentSlide === 2 ? {
+                  color: '#f8f0ff',
+                  WebkitTextFillColor: '#f8f0ff',
+                  textShadow: '0 0 20px rgba(255, 240, 255, 0.8), 0 0 40px rgba(255, 235, 255, 0.6), 0 0 60px rgba(255, 230, 255, 0.4), 0 0 80px rgba(168, 85, 247, 0.5), 0 0 100px rgba(255, 0, 128, 0.3)'
+                } : {})
               }}
             >
               {currentSlideData.title}
