@@ -346,7 +346,7 @@ const SmartChatbot = () => {
       {/* Floating Chat Button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-8 right-8 z-50 w-16 h-16 rounded-full bg-gradient-to-r from-primary via-magenta to-cyan text-white shadow-2xl hover:shadow-[0_0_40px_rgba(168,85,247,0.6)] transition-all duration-300 flex items-center justify-center group"
+        className="fixed bottom-8 right-4 md:right-8 z-50 w-16 h-16 rounded-full bg-gradient-to-r from-primary via-magenta to-cyan text-white shadow-2xl hover:shadow-[0_0_40px_rgba(168,85,247,0.6)] transition-all duration-300 flex items-center justify-center group"
         whileHover={{ scale: 1.1, rotate: 5 }}
         whileTap={{ scale: 0.9 }}
         initial={{ scale: 0, rotate: -180 }}
@@ -395,7 +395,7 @@ const SmartChatbot = () => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="fixed bottom-28 right-8 z-50 w-[420px] max-h-[650px] bg-dark border border-gray-800 rounded-3xl shadow-2xl overflow-hidden flex flex-col"
+            className="fixed bottom-28 right-4 md:right-8 z-50 w-[calc(100vw-2rem)] max-w-[420px] md:w-[420px] max-h-[650px] bg-dark border border-gray-800 rounded-3xl shadow-2xl overflow-hidden flex flex-col"
           >
             {/* Header */}
             <div className="bg-gradient-to-r from-primary via-magenta to-cyan p-5 flex items-center gap-3">

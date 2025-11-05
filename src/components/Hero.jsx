@@ -169,7 +169,7 @@ const Hero = () => {
       </button>
 
       {/* Hero Content */}
-      <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
+      <div className="relative z-10 text-center px-6 md:px-4 max-w-6xl mx-auto w-full">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
@@ -177,9 +177,10 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -30 }}
             transition={{ duration: 0.5 }}
+            className="w-full"
           >
             <motion.h1 
-              className="font-montserrat font-bold text-6xl md:text-8xl lg:text-9xl mb-6 gradient-text whitespace-pre-line"
+              className="font-montserrat font-bold text-5xl sm:text-6xl md:text-8xl lg:text-9xl mb-6 gradient-text whitespace-pre-line break-words px-2 md:px-0"
               animate={{
                 backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
               }}
@@ -188,12 +189,16 @@ const Hero = () => {
                 repeat: Infinity,
                 ease: "linear"
               }}
+              style={{
+                wordBreak: "break-word",
+                hyphens: "auto"
+              }}
             >
               {currentSlideData.title}
             </motion.h1>
 
             <motion.p
-              className="font-inter text-lg md:text-xl lg:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
+              className="font-inter text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed px-4 md:px-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
