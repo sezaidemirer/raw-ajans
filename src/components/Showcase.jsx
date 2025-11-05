@@ -82,7 +82,7 @@ const Showcase = () => {
   };
 
   return (
-    <section ref={ref} className="relative py-32 px-4 overflow-hidden bg-gradient-to-b from-dark via-dark-gray to-dark">
+    <section ref={ref} className="relative pt-8 pb-32 px-4 overflow-hidden bg-gradient-to-b from-dark via-dark-gray to-dark">
       <div className="relative z-10 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

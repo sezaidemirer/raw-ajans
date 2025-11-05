@@ -53,7 +53,7 @@ const Services = () => {
   ];
 
   return (
-    <section ref={ref} className="relative py-32 px-4 overflow-hidden bg-dark">
+    <section ref={ref} className="relative pt-8 pb-32 px-4 overflow-hidden bg-dark">
       {/* Background effects */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{

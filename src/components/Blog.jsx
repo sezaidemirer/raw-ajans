@@ -95,7 +95,7 @@ const Blog = () => {
     .slice(0, 3); // Sadece ilk 3 yazıyı göster
 
   return (
-    <section ref={ref} className="relative py-32 px-4 overflow-x-hidden overflow-y-visible bg-dark" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
+    <section ref={ref} className="relative pt-8 pb-32 px-4 overflow-x-hidden overflow-y-visible bg-dark" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
