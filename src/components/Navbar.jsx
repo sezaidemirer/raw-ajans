@@ -2,11 +2,16 @@ import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { t, i18n } = useTranslation();
+  const location = useLocation();
+  const navigate = useNavigate();
+  // Development ve production için path kontrolü
+  const isHomePage = location.pathname === '/' || location.pathname === '/raw-ajans' || location.pathname.endsWith('/');
   
   const toggleLanguage = () => {
     const newLang = i18n.language === 'tr' ? 'en' : 'tr';
@@ -23,18 +28,41 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { name: t('navbar.home'), href: '#hero' },
-    { name: t('navbar.about'), href: '#about' },
-    { name: t('navbar.services'), href: '#services' },
-    { name: t('navbar.work'), href: '#showcase' },
-    { name: t('navbar.blog'), href: '#blog' },
-    { name: t('navbar.contact'), href: '#contact' },
+    { name: t('navbar.home'), href: '#hero', isHome: true },
+    { name: t('navbar.about'), href: '#about', isHome: true },
+    { name: t('navbar.services'), href: '#services', isHome: true },
+    { name: t('navbar.work'), href: '#showcase', isHome: true },
+    { name: t('navbar.blog'), href: '#blog', isHome: true },
+    { name: t('navbar.contact'), href: '#contact', isHome: true },
   ];
 
   const scrollToSection = (href) => {
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+      setIsMobileMenuOpen(false);
+    }
+  };
+
+  const handleNavClick = (item, e) => {
+    e.preventDefault();
+    
+    // Ana Sayfa linki ise ve portfolio sayfasındaysak, ana sayfaya yönlendir
+    if (item.isHome && item.href === '#hero' && !isHomePage) {
+      navigate('/');
+      setIsMobileMenuOpen(false);
+      return;
+    }
+    
+    // Ana sayfadaysak, scroll yap
+    if (isHomePage) {
+      scrollToSection(item.href);
+    } else {
+      // Portfolio sayfasındaysak ve ana sayfa değilse, ana sayfaya git ve scroll yap
+      navigate('/');
+      setTimeout(() => {
+        scrollToSection(item.href);
+      }, 100);
       setIsMobileMenuOpen(false);
     }
   };
@@ -56,9 +84,13 @@ const Navbar = () => {
               href="#hero"
               onClick={(e) => {
                 e.preventDefault();
-                scrollToSection('#hero');
+                if (isHomePage) {
+                  scrollToSection('#hero');
+                } else {
+                  navigate('/');
+                }
               }}
-              className="font-montserrat font-bold text-2xl gradient-text"
+              className="font-montserrat font-bold text-2xl gradient-text cursor-pointer"
               whileHover={{ scale: 1.05 }}
             >
               Raw Ajans
@@ -70,11 +102,8 @@ const Navbar = () => {
                 <motion.a
                   key={index}
                   href={item.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection(item.href);
-                  }}
-                  className="font-inter text-gray-300 hover:text-white transition-colors duration-300 relative group"
+                  onClick={(e) => handleNavClick(item, e)}
+                  className="font-inter text-gray-300 hover:text-white transition-colors duration-300 relative group cursor-pointer"
                   whileHover={{ y: -2 }}
                 >
                   {item.name}
@@ -97,9 +126,16 @@ const Navbar = () => {
                 href="#contact"
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection('#contact');
+                  if (isHomePage) {
+                    scrollToSection('#contact');
+                  } else {
+                    navigate('/');
+                    setTimeout(() => {
+                      scrollToSection('#contact');
+                    }, 100);
+                  }
                 }}
-                className="px-6 py-2 bg-gradient-to-r from-primary to-magenta rounded-full font-poppins font-semibold text-white hover:shadow-lg hover:shadow-primary/50 transition-all duration-300"
+                className="px-6 py-2 bg-gradient-to-r from-primary to-magenta rounded-full font-poppins font-semibold text-white hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 cursor-pointer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -133,11 +169,8 @@ const Navbar = () => {
             <motion.a
               key={index}
               href={item.href}
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection(item.href);
-              }}
-              className="font-poppins text-3xl text-gray-300 hover:text-white transition-colors duration-300"
+              onClick={(e) => handleNavClick(item, e)}
+              className="font-poppins text-3xl text-gray-300 hover:text-white transition-colors duration-300 cursor-pointer"
               initial={{ opacity: 0, y: 20 }}
               animate={isMobileMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ delay: index * 0.1 }}

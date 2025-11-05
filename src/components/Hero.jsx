@@ -5,7 +5,6 @@ import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const { t } = useTranslation();
 
   const slideColors = [
@@ -57,16 +56,14 @@ const Hero = () => {
     }
   };
 
-      // Auto-advance slides
+      // Auto-advance slides - Always active, regardless of mouse position
       useEffect(() => {
-        if (isPaused) return;
-        
         const timer = setInterval(() => {
           setCurrentSlide((prev) => (prev + 1) % slides.length);
         }, 3000); // Change slide every 3 seconds
 
         return () => clearInterval(timer);
-      }, [isPaused, slides.length]);
+      }, [slides.length]);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -85,8 +82,6 @@ const Hero = () => {
   return (
     <section 
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
     >
       {/* Animated Background Blobs */}
       <div className="absolute inset-0 z-0">
@@ -96,17 +91,18 @@ const Hero = () => {
             className={`blob ${currentSlideData.blob1Color} w-96 h-96 top-20 left-20`}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{
-              opacity: 1,
+              opacity: currentSlide === 2 ? 0.3 : 1,
               scale: 1,
-              y: [0, -30, 0],
-              x: [0, 20, 0],
+              y: currentSlide === 2 ? 0 : [0, -30, 0],
+              x: currentSlide === 2 ? 0 : [0, 20, 0],
             }}
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{
               opacity: { duration: 0.5 },
-              y: { duration: 8, repeat: Infinity, ease: "easeInOut" },
-              x: { duration: 8, repeat: Infinity, ease: "easeInOut" },
+              y: currentSlide === 2 ? {} : { duration: 8, repeat: Infinity, ease: "easeInOut" },
+              x: currentSlide === 2 ? {} : { duration: 8, repeat: Infinity, ease: "easeInOut" },
             }}
+            style={currentSlide === 2 ? { willChange: 'auto', transform: 'translateZ(0)' } : {}}
           />
         </AnimatePresence>
         
@@ -116,17 +112,18 @@ const Hero = () => {
             className={`blob ${currentSlideData.blob2Color} w-80 h-80 bottom-20 right-40`}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{
-              opacity: 1,
+              opacity: currentSlide === 2 ? 0.3 : 1,
               scale: 1,
-              y: [0, 40, 0],
-              x: [0, -30, 0],
+              y: currentSlide === 2 ? 0 : [0, 40, 0],
+              x: currentSlide === 2 ? 0 : [0, -30, 0],
             }}
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{
               opacity: { duration: 0.5 },
-              y: { duration: 10, repeat: Infinity, ease: "easeInOut" },
-              x: { duration: 10, repeat: Infinity, ease: "easeInOut" },
+              y: currentSlide === 2 ? {} : { duration: 10, repeat: Infinity, ease: "easeInOut" },
+              x: currentSlide === 2 ? {} : { duration: 10, repeat: Infinity, ease: "easeInOut" },
             }}
+            style={currentSlide === 2 ? { willChange: 'auto', transform: 'translateZ(0)' } : {}}
           />
         </AnimatePresence>
         
@@ -136,17 +133,18 @@ const Hero = () => {
             className={`blob ${currentSlideData.blob3Color} w-72 h-72 top-1/2 right-20`}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{
-              opacity: 1,
+              opacity: currentSlide === 2 ? 0.3 : 1,
               scale: 1,
-              y: [0, -25, 0],
-              x: [0, 15, 0],
+              y: currentSlide === 2 ? 0 : [0, -25, 0],
+              x: currentSlide === 2 ? 0 : [0, 15, 0],
             }}
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{
               opacity: { duration: 0.5 },
-              y: { duration: 7, repeat: Infinity, ease: "easeInOut" },
-              x: { duration: 7, repeat: Infinity, ease: "easeInOut" },
+              y: currentSlide === 2 ? {} : { duration: 7, repeat: Infinity, ease: "easeInOut" },
+              x: currentSlide === 2 ? {} : { duration: 7, repeat: Infinity, ease: "easeInOut" },
             }}
+            style={currentSlide === 2 ? { willChange: 'auto', transform: 'translateZ(0)' } : {}}
           />
         </AnimatePresence>
       </div>
@@ -199,7 +197,10 @@ const Hero = () => {
                 ...(currentSlide === 2 ? {
                   color: '#f8f0ff',
                   WebkitTextFillColor: '#f8f0ff',
-                  textShadow: '0 0 20px rgba(255, 240, 255, 0.8), 0 0 40px rgba(255, 235, 255, 0.6), 0 0 60px rgba(255, 230, 255, 0.4), 0 0 80px rgba(168, 85, 247, 0.5), 0 0 100px rgba(255, 0, 128, 0.3)'
+                  textShadow: '0 0 30px rgba(255, 240, 255, 0.3), 0 0 60px rgba(168, 85, 247, 0.2)',
+                  willChange: 'transform',
+                  transform: 'translateZ(0)',
+                  backfaceVisibility: 'hidden'
                 } : {})
               }}
             >
@@ -263,9 +264,9 @@ const Hero = () => {
           key={currentSlide}
           className={`h-full bg-gradient-to-r ${currentSlideData.gradientFrom} ${currentSlideData.gradientTo}`}
           initial={{ width: "0%" }}
-          animate={{ width: isPaused ? `${(currentSlide / slides.length) * 100}%` : "100%" }}
+          animate={{ width: "100%" }}
           transition={{
-            duration: isPaused ? 0 : 3,
+            duration: 3,
             ease: "linear"
           }}
         />

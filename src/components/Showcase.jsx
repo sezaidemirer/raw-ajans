@@ -3,6 +3,7 @@ import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { ExternalLink } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 const Showcase = () => {
   const ref = useRef(null);
@@ -173,19 +174,21 @@ const Showcase = () => {
           <p className="font-inter text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
             {t('showcase.cta', 'Want to see more? Let\'s start a conversation.')}
           </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="group inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-primary via-magenta to-cyan text-white font-poppins font-bold text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300"
-          >
-            <span>{t('showcase.viewPortfolio', 'View Full Portfolio')}</span>
-            <motion.div
-              animate={{ x: [0, 5, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
+          <Link to="/portfolio">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="group inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-primary via-magenta to-cyan text-white font-poppins font-bold text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300"
             >
-              <ExternalLink className="w-5 h-5" />
-            </motion.div>
-          </motion.button>
+              <span>{t('showcase.viewPortfolio', 'View Full Portfolio')}</span>
+              <motion.div
+                animate={{ x: [0, 5, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              >
+                <ExternalLink className="w-5 h-5" />
+              </motion.div>
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
 

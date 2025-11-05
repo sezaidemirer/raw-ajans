@@ -99,7 +99,7 @@
   },
   "showcase": {
     "title": "Featured Work",
-    "subtitle": "Discover the power of raw creativity",
+    "subtitle": "Discover the power of raw creativity!",
     "viewProject": "View Project",
     "cta": "Want to see more? Let's start a conversation.",
     "viewPortfolio": "View Full Portfolio",
@@ -127,6 +127,18 @@
       "5": {
         "title": "Visual Story",
         "category": "Photography"
+      },
+      "6": {
+        "title": "Creative Project",
+        "category": "Creative"
+      },
+      "7": {
+        "title": "Brand Story",
+        "category": "Branding"
+      },
+      "8": {
+        "title": "Digital Campaign",
+        "category": "Campaign"
       }
     }
   },
@@ -177,6 +189,12 @@
       "thanks": "You're welcome! Is there anything else I can help you with? 😊",
       "default": "Thank you for your interest! I didn't quite understand how I can help with that. Could you please rephrase your question? Or you can directly contact us at hello@rawajans.com. 📧"
     }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "Our creative work and projects.",
+    "back": "Back to Home",
+    "director": "Director: Sezai Demirer | Raw Ajans"
   }
 }
 

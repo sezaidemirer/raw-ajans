@@ -99,7 +99,7 @@
   },
   "showcase": {
     "title": "Öne Çıkan Çalışmalar",
-    "subtitle": "Ham yaratıcılığın gücünü keşfedin",
+    "subtitle": "Ham yaratıcılığın gücünü keşfedin!",
     "viewProject": "Projeyi Görüntüle",
     "cta": "Daha fazlasını görmek ister misiniz? Hadi konuşalım.",
     "viewPortfolio": "Tüm Portfolyoyu Görüntüle",
@@ -127,6 +127,18 @@
       "5": {
         "title": "Görsel Hikaye",
         "category": "Fotoğrafçılık"
+      },
+      "6": {
+        "title": "Yaratıcı Proje",
+        "category": "Yaratıcılık"
+      },
+      "7": {
+        "title": "Marka Hikayesi",
+        "category": "Markalama"
+      },
+      "8": {
+        "title": "Dijital Kampanya",
+        "category": "Kampanya"
       }
     }
   },
@@ -177,6 +189,12 @@
       "thanks": "Rica ederim! Başka bir konuda yardımcı olabileceğim bir şey var mı? 😊",
       "default": "İlginiz için teşekkürler! Bu konuda size nasıl yardımcı olabileceğimi tam olarak anlayamadım. Lütfen sorunuzu başka türlü ifade eder misiniz? Ya da direkt hello@rawajans.com adresinden bizimle iletişime geçebilirsiniz. 📧"
     }
+  },
+  "portfolio": {
+    "title": "Portföy",
+    "subtitle": "Yaratıcı çalışmalarımız ve projelerimiz.",
+    "back": "Ana Sayfaya Dön",
+    "director": "Yönetmen: Sezai Demirer | Raw Ajans"
   }
 }
 

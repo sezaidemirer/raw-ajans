@@ -162,17 +162,23 @@ const Blog = () => {
               className="group relative bg-gradient-to-br from-dark-gray to-mid-gray rounded-3xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-all duration-500"
               whileHover={{ y: -10 }}
             >
-              {/* Image */}
-              <div className="relative h-56 overflow-hidden">
+              {/* Image - 1920x1080 (16:9) Aspect Ratio */}
+              <div className="relative aspect-video overflow-hidden rounded-t-3xl">
+                {/* Siyah Filtre Overlay - Alt sınır referansı */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent rounded-t-3xl z-10" />
+                
+                {/* Görsel - Filtrenin alt sınırında kesiliyor */}
                 <motion.img
                   src={post.image}
                   alt={post.title}
-                  className="w-full h-full object-cover"
-                  whileHover={{ scale: 1.1 }}
+                  className="absolute inset-0 w-full h-full object-cover rounded-t-3xl"
+                  whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.6 }}
+                  style={{ transformOrigin: 'center center', zIndex: 1 }}
                 />
-                {/* Gradient Overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-t ${post.color} opacity-0 group-hover:opacity-30 transition-opacity duration-500`} />
+                
+                {/* Gradient Overlay - Hover için */}
+                <div className={`absolute inset-0 bg-gradient-to-t ${post.color} opacity-0 group-hover:opacity-30 transition-opacity duration-500 rounded-t-3xl z-20`} />
                 
                 {/* Category Badge */}
                 <div className="absolute top-4 left-4">
